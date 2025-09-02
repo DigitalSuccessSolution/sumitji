@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- AOS animation start -->
+ <!-- AOS CSS -->
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+
+
+<!-- AOS animation end -->
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header</title>
+
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js CDN -->
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+ 
+</head>
+<body class="bg-white">
+
+
+   <!-- Header Start -->
+<header 
+  class="w-full bg-white shadow-md sticky top-0 z-50" 
+  x-data="{ mobileMenu: false }"
+>
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+
+    <!-- Logo -->
+    <div class="flex items-center space-x-2 h-12">
+      <a href="index.html" class="inline-block h-full">
+        <img src="img/Gemini_Generated_Image_crje5acrje5acrje.png" 
+             alt="Logo" 
+             class="h-full w-auto object-contain scale-125 cursor-pointer">
+      </a>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center flex-grow justify-center space-x-6">
+      <a href="about.html" class="text-blue-900 font-medium hover:text-yellow-500">About</a>
+      
+      <!-- Facilities Dropdown -->
+      <div class="relative" x-data="{ open: false }">
+        <button @click="open = !open" class="flex items-center space-x-1 text-blue-900 font-medium focus:outline-none hover:text-yellow-500">
+          <span>Facilities</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div 
+          x-show="open" 
+          @click.away="open = false"
+          x-transition 
+          class="absolute left-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-50"
+        >
+          <a href="subpages/Badminton.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Badminton</a>
+          <a href="subpages/cricate.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Cricket</a>
+          <a href="subpages/football.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Football</a>
+          <a href="subpages/tennis.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Tennis</a>
+          <a href="subpages/basketball.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Basketball</a>
+          <a href="subpages/basketball.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Kabaddi</a>
+          <a href="subpages/swimming.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Swimming</a>
+          <a href="#" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Skating</a>
+        </div>
+      </div>
+
+      <a href="Partners.html" class="text-blue-900 font-medium hover:text-yellow-500">Partners</a>
+      <a href="Achievers.html" class="text-blue-900 font-medium hover:text-yellow-500">Achievers</a>
+      <a href="Corporate.html" class="text-blue-900 font-medium hover:text-yellow-500">Corporate</a>
+      <a href="Announcements.html" class="text-blue-900 font-medium hover:text-yellow-500">Announcements</a>
+      <a href="Contact.html" class="text-blue-900 font-medium hover:text-yellow-500">Contact</a>
+    </nav>
+
+    <!-- Register Now Button -->
+    <a href="#register" 
+       class="hidden md:inline-block ml-4 px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-white hover:text-black border border-yellow-400 transition">
+      Register Now
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-blue-900" @click="mobileMenu = !mobileMenu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+<!-- Mobile Nav -->
+<div 
+  x-show="mobileMenu" 
+  x-transition:enter="transition ease-out duration-200" 
+  x-transition:enter-start="opacity-0 -translate-y-2" 
+  x-transition:enter-end="opacity-100 translate-y-0" 
+  x-transition:leave="transition ease-in duration-150" 
+  x-transition:leave-start="opacity-100 translate-y-0" 
+  x-transition:leave-end="opacity-0 -translate-y-2" 
+  class="md:hidden bg-white border-t shadow-md" 
+  x-data="{ facilitiesOpen: false }"
+>
+  <a href="#" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">About</a>
+  
+  <!-- Facilities (Dropdown as toggle in mobile) -->
+  <div class="border-t">
+    <button 
+      @click="facilitiesOpen = !facilitiesOpen" 
+      class="w-full flex justify-between items-center px-6 py-2 font-medium text-blue-900 focus:outline-none hover:bg-gray-100"
+    >
+      <span>Facilities</span>
+      <svg class="w-4 h-4 transform" :class="facilitiesOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div x-show="facilitiesOpen" x-transition class="pl-8">
+      <a href="subpages/Badminton.html" class="block py-2 text-blue-900 hover:bg-gray-100">Badminton</a>
+      <a href="subpages/cricate.html" class="block py-2 text-blue-900 hover:bg-gray-100">Cricket</a>
+      <a href="subpages/football.html" class="block py-2 text-blue-900 hover:bg-gray-100">Football</a>
+      <a href="subpages/tennis.html" class="block py-2 text-blue-900 hover:bg-gray-100">Tennis</a>
+      <a href="subpages/basketball.html" class="block py-2 text-blue-900 hover:bg-gray-100">Basketball</a>
+      <a href="subpages/kabaddi.html" class="block py-2 text-blue-900 hover:bg-gray-100">Kabaddi</a>
+      <a href="subpages/swimming.html" class="block py-2 text-blue-900 hover:bg-gray-100">Swimming</a>
+      <a href="#" class="block py-2 text-blue-900 hover:bg-gray-100">Skating</a>
+    </div>
+  </div>
+
+  <a href="Partners.html" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">Partners</a>
+  <a href="Achievers.html" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">Achievers</a>
+  <a href="Corporate.html" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">Corporate</a>
+  <a href="Announcements.html" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">Announcements</a>
+  <a href="Contact.html" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">Contact</a>
+  <a href="Contact.html" class="block px-6 py-2 bg-yellow-400 text-black font-semibold hover:bg-white hover:text-black border border-yellow-400 transition">
+    Register Now
+  </a>
+</div>
+
+</header>
+<!-- Header End -->
+
+
+
+
+
+
+
+<!-- Hero Section Start -->
+<section class="relative h-screen">
+
+  <!-- Desktop BG -->
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block" 
+       style="background-image: url('img/Gemini_Generated_Image_mreywsmreywsmrey.png');">
+  </div>
+
+  <!-- Mobile BG -->
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat block md:hidden" 
+       style="background-image: url('img/hero mob.png');">
+  </div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/50 block md:hidden"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-16 py-20 flex flex-col items-center md:items-start text-center md:text-left">
+    
+    <!-- Left Content -->
+    <div class="flex-1 space-y-6" data-aos="fade-right" data-aos-duration="1000">
+      <span class="inline-block bg-yellow-400 text-blue-900 font-semibold px-4 py-1 rounded-full text-sm" data-aos="zoom-in" data-aos-delay="200">
+        Welcome to SAOI
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold text-blue-900 leading-tight" data-aos="fade-up" data-aos-delay="400">
+        Build Your Career in <br> <span class="text-yellow-500">Sports Excellence</span>
+      </h1>
+      <p class="text-gray-100 md:text-gray-600 text-lg max-w-lg mx-auto md:mx-0" data-aos="fade-up" data-aos-delay="600">
+        Join India’s leading sports academy and shape your future with world-class facilities, experienced mentors, and proven success stories.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row sm:justify-start justify-center gap-4" data-aos="fade-up" data-aos-delay="800">
+        <a href="#register" class="btn btn-primary">
+          Register Now
+        </a>
+        <a href="#facilities" class="btn btn-secondary">
+          Explore Facilities
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="relative max-w-7xl mx-auto px-0 lg:px-16 -mt-10">
+
+    <!-- Mobile Carousel -->
+    <div class="relative overflow-hidden md:hidden">
+      <div id="mobile-carousel" class="flex transition-transform duration-700">
+
+        <!-- Feature 1 -->
+        <div class="w-full flex-shrink-0 p-4">
+          <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl">
+            <div class="flex justify-center items-center mb-4">
+              <i class="fas fa-chalkboard-teacher text-yellow-400 text-4xl"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-2">World-Class Coaching</h3>
+            <p class="text-gray-300 text-sm">Expert trainers with years of experience in national and international sports.</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="w-full flex-shrink-0 p-4">
+          <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl">
+            <div class="flex justify-center items-center mb-4">
+              <i class="fas fa-dumbbell text-yellow-400 text-4xl"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-2">Advanced Facilities</h3>
+            <p class="text-gray-300 text-sm">Cutting-edge infrastructure and equipment to support athletes’ growth.</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="w-full flex-shrink-0 p-4">
+          <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl">
+            <div class="flex justify-center items-center mb-4">
+              <i class="fas fa-leaf text-yellow-400 text-4xl"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-2">Holistic Development</h3>
+            <p class="text-gray-300 text-sm">Focus on both physical and mental well-being, ensuring all-round growth.</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="w-full flex-shrink-0 p-4">
+          <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl">
+            <div class="flex justify-center items-center mb-4">
+              <i class="fas fa-running text-yellow-400 text-4xl"></i>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-2">Personalized Training</h3>
+            <p class="text-gray-300 text-sm">Tailored fitness and skill development plans for every athlete.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Grid -->
+    <div class="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="1000">
+      <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
+        <div class="flex justify-center items-center mb-4">
+          <i class="fas fa-chalkboard-teacher text-yellow-400 text-4xl"></i>
+        </div>
+        <h3 class="text-white font-bold text-lg mb-2">World-Class Coaching</h3>
+        <p class="text-gray-300 text-sm">Expert trainers with years of experience in national and international sports.</p>
+      </div>
+
+      <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
+        <div class="flex justify-center items-center mb-4">
+          <i class="fas fa-dumbbell text-yellow-400 text-4xl"></i>
+        </div>
+        <h3 class="text-white font-bold text-lg mb-2">Advanced Facilities</h3>
+        <p class="text-gray-300 text-sm">Cutting-edge infrastructure and equipment to support athletes’ growth.</p>
+      </div>
+
+      <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
+        <div class="flex justify-center items-center mb-4">
+          <i class="fas fa-leaf text-yellow-400 text-4xl"></i>
+        </div>
+        <h3 class="text-white font-bold text-lg mb-2">Holistic Development</h3>
+        <p class="text-gray-300 text-sm">Focus on both physical and mental well-being, ensuring all-round growth.</p>
+      </div>
+
+      <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
+        <div class="flex justify-center items-center mb-4">
+          <i class="fas fa-running text-yellow-400 text-4xl"></i>
+        </div>
+        <h3 class="text-white font-bold text-lg mb-2">Personalized Training</h3>
+        <p class="text-gray-300 text-sm">Tailored fitness and skill development plans for every athlete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Carousel Script -->
+<script>
+  const carousel = document.getElementById("mobile-carousel");
+  const slides = carousel.children.length;
+  let index = 0;
+
+  setInterval(() => {
+    index = (index + 1) % slides;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }, 2000); // 2 sec delay
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<!-- Footer Start -->
+ <div class="h-[0px]">
+
+ </div>
+<footer class="bg-gray-200 text-blue-900 ">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+    <!-- Logo & Social -->
+    <div class="space-y-4">
+      <img src="your-logo.png" alt="Logo" class="h-12">
+      <p class="font-semibold">SPORTS ACADEMY OF INDIA</p>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-4 mt-4">
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Useful Links -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Useful Links</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-yellow-600">About</a></li>
+        <li><a href="#" class="hover:text-yellow-600">Contact</a></li>
+        <li><a href="#" class="hover:text-yellow-600">Achievers</a></li>
+        <li><a href="#" class="hover:text-yellow-600">Latest Activities</a></li>
+      </ul>
+    </div>
+
+    <!-- Partners / Registration -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">&nbsp;</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-yellow-600">Partners</a></li>
+        <li><a href="#" class="hover:text-yellow-600">Registration</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h3 class="text-xl font-bold mb-2">Subscribe to our Newsletter</h3>
+      <p class="text-sm mb-4">Stay updated with latest news and events</p>
+      <form class="flex items-center bg-white rounded-full shadow overflow-hidden">
+        <input type="email" placeholder="Enter your email address..." class="flex-1 px-4 py-2 text-sm focus:outline-none">
+        <button type="submit" class="px-4 py-2 text-blue-900 hover:text-yellow-600 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bg-blue-900 text-gray-200 text-center md:flex md:justify-between md:items-center px-6 py-4">
+    <p>© 2025 SAOI | All Rights Reserved. Design & Development by H/DS</p>
+    <div class="space-x-4 mt-2 md:mt-0">
+      <a href="#" class="hover:text-yellow-400">Privacy Policy</a>
+      <a href="#" class="hover:text-yellow-400">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+<!-- Footer End -->
+
+<!-- FontAwesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation speed
+    once: true,     // scroll karne par sirf ek baar chalega
+  });
+</script>
+
+
+</body>
+</html>

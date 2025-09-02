@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header</title>
+
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js CDN -->
+  <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+ 
+</head>
+<body class="bg-white">
+
+
+   <!-- Header Start -->
+<header 
+  class="w-full bg-white shadow-md sticky top-0 z-50" 
+  x-data="{ mobileMenu: false }"
+>
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+
+    <!-- Logo -->
+    <div class="flex items-center space-x-2 h-12">
+      <a href="index.html" class="inline-block h-full">
+        <img src="img/Gemini_Generated_Image_crje5acrje5acrje.png" 
+             alt="Logo" 
+             class="h-full w-auto object-contain scale-125 cursor-pointer">
+      </a>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center flex-grow justify-center space-x-6">
+      <a href="about.html" class="text-blue-900 font-medium hover:text-yellow-500">About</a>
+      
+      <!-- Facilities Dropdown -->
+      <div class="relative" x-data="{ open: false }">
+        <button @click="open = !open" class="flex items-center space-x-1 text-blue-900 font-medium focus:outline-none hover:text-yellow-500">
+          <span>Facilities</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div 
+          x-show="open" 
+          @click.away="open = false"
+          x-transition 
+          class="absolute left-0 mt-2 w-48 bg-white border rounded-lg shadow-lg z-50"
+        >
+          <a href="subpages/Badminton.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Badminton</a>
+          <a href="subpages/cricate.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Cricket</a>
+          <a href="subpages/football.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Football</a>
+          <a href="subpages/tennis.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Tennis</a>
+          <a href="subpages/basketball.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Basketball</a>
+          <a href="subpages/basketball.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Kabaddi</a>
+          <a href="subpages/swimming.html" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Swimming</a>
+          <a href="#" class="block px-4 py-2 text-sm text-blue-900 hover:bg-gray-100">Skating</a>
+        </div>
+      </div>
+
+      <a href="Partners.html" class="text-blue-900 font-medium hover:text-yellow-500">Partners</a>
+      <a href="Achievers.html" class="text-blue-900 font-medium hover:text-yellow-500">Achievers</a>
+      <a href="Corporate.html" class="text-blue-900 font-medium hover:text-yellow-500">Corporate</a>
+      <a href="Announcements.html" class="text-blue-900 font-medium hover:text-yellow-500">Announcements</a>
+      <a href="Contact.html" class="text-blue-900 font-medium hover:text-yellow-500">Contact</a>
+    </nav>
+
+    <!-- Register Now Button -->
+    <a href="#register" 
+       class="hidden md:inline-block ml-4 px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-white hover:text-black border border-yellow-400 transition">
+      Register Now
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-blue-900" @click="mobileMenu = !mobileMenu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div x-show="mobileMenu" class="md:hidden bg-white border-t shadow-md" x-data="{ facilitiesOpen: false }">
+    <a href="#" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">About</a>
+    
+    <!-- Facilities (Dropdown as toggle in mobile) -->
+    <div class="border-t">
+      <button @click="facilitiesOpen = !facilitiesOpen" class="w-full flex justify-between items-center px-6 py-2 font-medium text-blue-900 focus:outline-none hover:bg-gray-100">
+        <span>Facilities</span>
+        <svg class="w-4 h-4 transform" :class="facilitiesOpen ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+       <div x-show="facilitiesOpen" x-transition class="pl-8">
+        <a href="subpages/Badminton.html" class="block py-2 text-blue-900 hover:bg-gray-100">Badminton</a>
+        <a href="subpages/cricate.html" class="block py-2 text-blue-900 hover:bg-gray-100">Cricket</a>
+        <a href="subpages/football.html" class="block py-2 text-blue-900 hover:bg-gray-100">Football</a>
+        <a href="subpages/tennis.html" class="block py-2 text-blue-900 hover:bg-gray-100">Tennis</a>
+        <a href="subpages/basketball.html" class="block py-2 text-blue-900 hover:bg-gray-100">Basketball</a>
+        <a href="subpages/kabaddi.html" class="block py-2 text-blue-900 hover:bg-gray-100">Kabaddi</a>
+        <a href="subpages/swimming.html" class="block py-2 text-blue-900 hover:bg-gray-100">Swimming</a>
+        <a href="#" class="block py-2 text-blue-900 hover:bg-gray-100">Skating</a>
+      </div>
+    </div>
+
+    <a href="Partners.html" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">Partners</a>
+    <a href="Achievers.html" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">Achievers</a>
+    <a href="Corporate.html" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">Corporate</a>
+    <a href="Announcements.html" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">Announcements</a>
+    <a href="Contact.html" class="block px-6 py-2 text-blue-900 hover:bg-gray-100">Contact</a>
+    <a href="Contact.html" class="block px-6 py-2 bg-yellow-400 text-black font-semibold hover:bg-white hover:text-black border border-yellow-400 transition">
+      Register Now
+    </a>
+  </div>
+</header>
+<!-- Header End -->
+
+
+
+
+
+
+
+<!-- Hero Section Start -->
+<section class="relative bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-16 py-20 flex flex-col-reverse md:flex-row items-center gap-10">
+
+    <!-- Left Content -->
+    <div class="flex-1 text-center md:text-left space-y-6">
+      <span class="inline-block bg-yellow-400 text-blue-900 font-semibold px-4 py-1 rounded-full text-sm">
+        Welcome to SAOI
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold text-blue-900 leading-tight">
+        Build Your Career in <br> <span class="text-yellow-500">Sports Excellence</span>
+      </h1>
+      <p class="text-gray-600 text-lg max-w-lg">
+        Join India’s leading sports academy and shape your future with world-class facilities, experienced mentors, and proven success stories.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row sm:justify-start justify-center gap-4">
+        <a href="#register" class="btn btn-primary">
+          Register Now
+        </a>
+        <a href="#facilities" class="btn btn-secondary">
+          Explore Facilities
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="flex-1 flex justify-center md:justify-end">
+      <img src="data:image/jpeg;base64,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" alt="Hero Image" class="w-full max-w-md rounded-2xl shadow-lg">
+    </div>
+  </div>
+</section>
+<!-- Hero Section End -->
+
+
+
+
+
+
+  
+
+
+<!-- Footer Start -->
+<footer class="bg-gray-200 text-blue-900">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+
+    <!-- Logo & Social -->
+    <div class="space-y-4">
+      <img src="your-logo.png" alt="Logo" class="h-12">
+      <p class="font-semibold">SPORTS ACADEMY OF INDIA</p>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-4 mt-4">
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="w-10 h-10 flex items-center justify-center border border-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Useful Links -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Useful Links</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-yellow-600">About</a></li>
+        <li><a href="#" class="hover:text-yellow-600">Contact</a></li>
+        <li><a href="#" class="hover:text-yellow-600">Achievers</a></li>
+        <li><a href="#" class="hover:text-yellow-600">Latest Activities</a></li>
+      </ul>
+    </div>
+
+    <!-- Partners / Registration -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">&nbsp;</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-yellow-600">Partners</a></li>
+        <li><a href="#" class="hover:text-yellow-600">Registration</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h3 class="text-xl font-bold mb-2">Subscribe to our Newsletter</h3>
+      <p class="text-sm mb-4">Stay updated with latest news and events</p>
+      <form class="flex items-center bg-white rounded-full shadow overflow-hidden">
+        <input type="email" placeholder="Enter your email address..." class="flex-1 px-4 py-2 text-sm focus:outline-none">
+        <button type="submit" class="px-4 py-2 text-blue-900 hover:text-yellow-600 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bg-blue-900 text-gray-200 text-center md:flex md:justify-between md:items-center px-6 py-4">
+    <p>© 2025 SAOI | All Rights Reserved. Design & Development by H/DS</p>
+    <div class="space-x-4 mt-2 md:mt-0">
+      <a href="#" class="hover:text-yellow-400">Privacy Policy</a>
+      <a href="#" class="hover:text-yellow-400">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+<!-- Footer End -->
+
+<!-- FontAwesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

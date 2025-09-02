@@ -1,0 +1,190 @@
+/* --------------------
+   Global Reset & Fonts
+-------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  background-color: #ffffff;
+  color: #0f172a; /* dark blue-ish */
+  line-height: 1.6;
+}
+
+/* --------------------
+   Colors (Theme)
+-------------------- */
+:root {
+  --primary: #1e3a8a;   /* Dark Blue */
+  --secondary: #facc15; /* Yellow */
+  --text-dark: #0f172a;
+  --text-light: #475569;
+  --bg-light: #f8fafc;
+}
+
+/* --------------------
+   Headings
+-------------------- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem; /* 40px */
+  line-height: 1.2;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+/* --------------------
+   Paragraph
+-------------------- */
+p {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+/* --------------------
+/* Buttons Base Style */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid transparent;
+}
+
+/* Primary Button (Yellow) */
+.btn-primary {
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-color: var(--secondary);
+}
+
+/* Secondary Button (Blue) */
+.btn-secondary {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+/* Universal Hover Effect */
+.btn:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: currentColor;
+}
+
+/* --------------------
+   Header
+-------------------- */
+header {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Navbar Links */
+header nav a {
+  font-weight: 500;
+}
+header nav a.active {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+/* --------------------
+   Footer
+-------------------- */
+footer {
+  background-color: #e2e8f0; /* light gray */
+  color: var(--primary);
+}
+
+footer h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: var(--primary);
+}
+footer a:hover {
+  color: var(--secondary);
+}
+
+/* Social Icons */
+footer .social-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+footer .social-icon:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  background-color: var(--primary);
+  color: #e2e8f0;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* --------------------
+   Forms
+-------------------- */
+input, textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  transition: border 0.2s ease;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Newsletter Form */
+.newsletter {
+  display: flex;
+  background: #ffffff;
+  border-radius: 9999px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.newsletter input {
+  border: none;
+  flex: 1;
+}
+.newsletter button {
+  padding: 0 1rem;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+.newsletter button:hover {
+  color: var(--secondary);
+}
