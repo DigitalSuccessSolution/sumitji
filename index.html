@@ -250,40 +250,53 @@
       </div>
     </div>
 
-    <!-- Desktop Grid -->
-    <div class="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="1000">
-      <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
-        <div class="flex justify-center items-center mb-4">
-          <i class="fas fa-chalkboard-teacher text-yellow-400 text-4xl"></i>
-        </div>
-        <h3 class="text-white font-bold text-lg mb-2">World-Class Coaching</h3>
-        <p class="text-gray-300 text-sm">Expert trainers with years of experience in national and international sports.</p>
-      </div>
-
-      <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
-        <div class="flex justify-center items-center mb-4">
-          <i class="fas fa-dumbbell text-yellow-400 text-4xl"></i>
-        </div>
-        <h3 class="text-white font-bold text-lg mb-2">Advanced Facilities</h3>
-        <p class="text-gray-300 text-sm">Cutting-edge infrastructure and equipment to support athletes’ growth.</p>
-      </div>
-
-      <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
-        <div class="flex justify-center items-center mb-4">
-          <i class="fas fa-leaf text-yellow-400 text-4xl"></i>
-        </div>
-        <h3 class="text-white font-bold text-lg mb-2">Holistic Development</h3>
-        <p class="text-gray-300 text-sm">Focus on both physical and mental well-being, ensuring all-round growth.</p>
-      </div>
-
-      <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl hover:scale-105 transition-transform duration-300">
-        <div class="flex justify-center items-center mb-4">
-          <i class="fas fa-running text-yellow-400 text-4xl"></i>
-        </div>
-        <h3 class="text-white font-bold text-lg mb-2">Personalized Training</h3>
-        <p class="text-gray-300 text-sm">Tailored fitness and skill development plans for every athlete.</p>
-      </div>
+   <!-- Desktop Grid -->
+<div class="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl animate-fade-in">
+    <div class="flex justify-center items-center mb-4">
+      <i class="fas fa-chalkboard-teacher text-yellow-400 text-4xl"></i>
     </div>
+    <h3 class="text-white font-bold text-lg mb-2">World-Class Coaching</h3>
+    <p class="text-gray-300 text-sm">Expert trainers with years of experience in national and international sports.</p>
+  </div>
+
+  <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl animate-fade-in" style="animation-delay:0.2s">
+    <div class="flex justify-center items-center mb-4">
+      <i class="fas fa-dumbbell text-yellow-400 text-4xl"></i>
+    </div>
+    <h3 class="text-white font-bold text-lg mb-2">Advanced Facilities</h3>
+    <p class="text-gray-300 text-sm">Cutting-edge infrastructure and equipment to support athletes’ growth.</p>
+  </div>
+
+  <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl animate-fade-in" style="animation-delay:0.4s">
+    <div class="flex justify-center items-center mb-4">
+      <i class="fas fa-leaf text-yellow-400 text-4xl"></i>
+    </div>
+    <h3 class="text-white font-bold text-lg mb-2">Holistic Development</h3>
+    <p class="text-gray-300 text-sm">Focus on both physical and mental well-being, ensuring all-round growth.</p>
+  </div>
+
+  <div class="bg-blue-900/90 backdrop-blur-lg rounded-2xl p-6 text-center shadow-xl animate-fade-in" style="animation-delay:0.6s">
+    <div class="flex justify-center items-center mb-4">
+      <i class="fas fa-running text-yellow-400 text-4xl"></i>
+    </div>
+    <h3 class="text-white font-bold text-lg mb-2">Personalized Training</h3>
+    <p class="text-gray-300 text-sm">Tailored fitness and skill development plans for every athlete.</p>
+  </div>
+</div>
+
+<!-- CSS Animation -->
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+</style>
+
   </div>
 </section>
 <!-- Hero Section End -->
@@ -408,7 +421,7 @@
 
 
 <!-- About Section Start -->
-<section class="about-section py-16 px-6 max-w-7xl mx-auto">
+<section class="about-section py-16 px-6 max-w-7xl mx-auto" style="background-color: rgb(253 253 253);">
 
   <!-- Mobile Layout -->
   <div class="block md:hidden space-y-6">
@@ -419,10 +432,10 @@
     </h2>
 
     <!-- Video -->
-    <div data-aos="zoom-in" data-aos-delay="200">
-      <video autoplay muted loop playsinline 
-        class="rounded-2xl shadow-lg w-full h-auto object-cover">
-        <source src="img/PixVerse_V5_Image_Text_360P_A_vector_image_of_-vmake.mp4" type="video/mp4">
+    <div data-aos="zoom-in" data-aos-delay="200"  style="box-shadow: none !important;">
+      <video autoplay muted loop playsinline  
+        class="rounded-2xl w-full h-auto object-cover" style="box-shadow: none !important;">
+        <source src="img/PixVerse_V5_Image_Text_360P_A_vector_image_of_-vmake.mp4" type="video/mp4"  style="box-shadow: none !important;">
         Your browser does not support the video tag.
       </video>
     </div>
@@ -527,9 +540,9 @@
         EXPERIENCE THE <span class="text-secondary">THRILL</span> OF SPORTS
       </h2>
 
-      <!-- Underline Line Animation -->
+      <!-- Underline Line Animation (trigger on scroll) -->
       <div class="h-1 w-full bg-transparent overflow-hidden relative">
-        <div class="line-fill absolute top-0 left-0 h-full rounded-full"></div>
+        <div class="line-fill absolute top-0 left-0 h-full rounded-full" data-aos="line-grow"></div>
       </div>
     </div>
 
@@ -572,19 +585,31 @@
     }
 
     /* Line Fill Animation */
-    .line-fill {
-      width: 0%;
-      background: linear-gradient(90deg, #facc15, #1e3a8a, white);
-      animation: line-grow 2.5s ease forwards;
-    }
-
     @keyframes line-grow {
       0% { width: 0%; }
       100% { width: 100%; }
     }
+
+    /* AOS Custom for Line */
+    [data-aos="line-grow"] {
+      width: 0%;
+      background: linear-gradient(90deg, #facc15, #1e3a8a, white);
+    }
+    [data-aos="line-grow"].aos-animate {
+      animation: line-grow 2.5s ease forwards;
+    }
   </style>
 </section>
-<!-- event section end -->
+
+<!-- AOS Init -->
+<script>
+  AOS.init({
+    once: true, // sirf ek baar chale
+    duration: 1000,
+    offset: 100
+  });
+</script>
+
 
 
 
