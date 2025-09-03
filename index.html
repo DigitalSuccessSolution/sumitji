@@ -519,6 +519,140 @@
 <!-- About Section End -->
 
 
+<!-- Events Section (Light Premium Style) -->
+<section class="relative py-16 md:py-20 bg-[#f8fafc]">
+  <div class="max-w-6xl mx-auto text-center px-4 sm:px-6" data-aos="fade-up">
+    <div class="inline-block relative">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4 sm:mb-6 tracking-wide inline-block relative">
+        EXPERIENCE THE <span class="text-secondary">THRILL</span> OF SPORTS
+      </h2>
+
+      <!-- Underline Line Animation -->
+      <div class="h-1 w-full bg-transparent overflow-hidden relative">
+        <div class="line-fill absolute top-0 left-0 h-full rounded-full"></div>
+      </div>
+    </div>
+
+    <p class="text-base sm:text-lg text-text-light max-w-3xl mx-auto mb-6 sm:mb-8 mt-4 sm:mt-6">
+      World-class events and competitions designed to inspire excellence, build teamwork, 
+      and celebrate the true spirit of sportsmanship.
+    </p>
+    <a href="#events" class="btn btn-secondary shadow-lg text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
+      View Upcoming Events
+    </a>
+  </div>
+
+  <!-- Premium Feature Strip -->
+  <div class="mt-12 sm:mt-16 overflow-hidden relative bg-[#1e3a8a] text-white">
+    <div class="flex animate-scroll-reverse whitespace-nowrap py-3 sm:py-4 text-sm sm:text-lg">
+      <span class="mx-6 sm:mx-8 font-semibold">⚡ Athlete Development</span>
+      <span class="mx-6 sm:mx-8 font-semibold">🏆 Competition Opportunities</span>
+      <span class="mx-6 sm:mx-8 font-semibold">📘 Tailored Training Programs</span>
+      <span class="mx-6 sm:mx-8 font-semibold">🎯 Expert Coaches</span>
+      <span class="mx-6 sm:mx-8 font-semibold">🏟️ World-Class Facilities</span>
+      <span class="mx-6 sm:mx-8 font-semibold">⚡ Athlete Development</span>
+      <span class="mx-6 sm:mx-8 font-semibold">🏆 Competition Opportunities</span>
+      <span class="mx-6 sm:mx-8 font-semibold">📘 Tailored Training Programs</span>
+      <span class="mx-6 sm:mx-8 font-semibold">🎯 Expert Coaches</span>
+      <span class="mx-6 sm:mx-8 font-semibold">🏟️ World-Class Facilities</span>
+    </div>
+  </div>
+
+  <!-- CSS -->
+  <style>
+    /* Premium Feature Strip Animation */
+    @keyframes scroll-right-to-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-scroll-reverse {
+      display: inline-flex;
+      animation: scroll-right-to-left 20s linear infinite;
+    }
+
+    /* Line Fill Animation */
+    .line-fill {
+      width: 0%;
+      background: linear-gradient(90deg, #facc15, #1e3a8a, white);
+      animation: line-grow 2.5s ease forwards;
+    }
+
+    @keyframes line-grow {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+  </style>
+</section>
+<!-- event section end -->
+
+
+
+
+<!-- Membership Section -->
+<section class="py-16 bg-white" id="membership">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">
+      Explore Membership
+    </h2>
+    <p class="max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+      Unlock your athletic potential with our exclusive memberships! Choose between two tailored plans 
+      designed to fit every level of commitment, offering unmatched facilities and expert coaching to help you thrive
+    </p>
+
+    <!-- Cards Wrapper -->
+    <div class="grid md:grid-cols-2 gap-8 group">
+      
+      <!-- Individual Card -->
+      <div class="relative rounded-2xl overflow-hidden transition-all duration-500 ease-in-out transform group-hover:scale-95 hover:scale-105" 
+           data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://media.istockphoto.com/id/1190367451/photo/law-student-standing-at-entrance-to-university-building.webp?a=1&b=1&s=612x612&w=0&k=20&c=pdtSkc_-J2yjfci_8OogH8ADxFVvWuxO8LdvaBhZUhc=" 
+             alt="Individual Membership" 
+             class="w-full h-80 object-cover transition-transform duration-500 ease-in-out">
+        
+        <!-- Overlay Text -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center">
+          <div class="bg-white px-6 py-2 rounded-lg shadow-md text-lg font-semibold mb-3">
+            Individual
+          </div>
+          <a href="#individual" class="btn btn-secondary">
+            KNOW MORE
+          </a>
+        </div>
+      </div>
+
+      <!-- Corporate Card -->
+      <div class="relative rounded-2xl overflow-hidden transition-all duration-500 ease-in-out transform group-hover:scale-95 hover:scale-105" 
+           data-aos="zoom-in" data-aos-delay="300">
+        <img src="https://media.istockphoto.com/id/1392016982/photo/mixed-group-of-business-people-sitting-around-a-table-and-talking.webp?a=1&b=1&s=612x612&w=0&k=20&c=ZWDD9TinKVcgKsQo7Lrn0fR5NkVI-HiBobM5ktxSFYc=" 
+             alt="Corporate Membership" 
+             class="w-full h-80 object-cover transition-transform duration-500 ease-in-out">
+        
+        <!-- Overlay Text -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-center">
+          <div class="bg-white px-6 py-2 rounded-lg shadow-md text-lg font-semibold mb-3">
+            Corporate Membership
+          </div>
+          <a href="#corporate" class="btn btn-primary">
+            KNOW MORE
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom CSS -->
+  <style>
+    /* Left-Right Hover Zoom Effect */
+    .group:hover > div {
+      transform: scale(0.95);
+    }
+    .group:hover > div:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</section>
 
 
 
@@ -526,19 +660,17 @@
 
 
 <!-- Footer Start -->
- <div class="h-[0px]">
-
- </div>
-<footer class="bg-gray-200 text-blue-900 ">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+<div class="h-[0px]"></div>
+<footer class="bg-gray-200 text-blue-900">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
 
     <!-- Logo & Social -->
     <div class="space-y-4">
-      <img src="your-logo.png" alt="Logo" class="h-12">
+      <img src="img/Gemini_Generated_Image_crje5acrje5acrje.png" alt="Logo" class="h-12 mx-auto md:mx-0">
       <p class="font-semibold">SPORTS ACADEMY OF INDIA</p>
 
       <!-- Social Icons -->
-      <div class="flex space-x-4 mt-4">
+      <div class="flex space-x-4 mt-4 justify-center md:justify-start">
         <a href="#" class="w-10 h-10 flex items-center justify-center border border-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition">
           <i class="fab fa-facebook-f"></i>
         </a>
@@ -562,14 +694,21 @@
       </ul>
     </div>
 
-    <!-- Partners / Registration -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4">&nbsp;</h3>
-      <ul class="space-y-2">
-        <li><a href="#" class="hover:text-yellow-600">Partners</a></li>
-        <li><a href="#" class="hover:text-yellow-600">Registration</a></li>
-      </ul>
-    </div>
+    <!-- Google Map -->
+<div>
+  <h3 class="text-lg font-semibold mb-4 text-center">Our Location</h3>
+  <div class="w-full h-40 md:h-44 rounded-lg overflow-hidden shadow ml-[-10px] md:ml-[-20px]">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.123456789!2d72.856164!3d19.017614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1abcd12345%3A0xabcdef123456789!2sYour%20Location%20Name!5e0!3m2!1sen!2sin!4v1693624212345!5m2!1sen!2sin" 
+      width="100%" 
+      height="100%" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
 
     <!-- Newsletter -->
     <div>
@@ -588,7 +727,7 @@
 
   <!-- Bottom Bar -->
   <div class="bg-blue-900 text-gray-200 text-center md:flex md:justify-between md:items-center px-6 py-4">
-    <p>© 2025 SAOI | All Rights Reserved. Design & Development by H/DS</p>
+    <p class="text-white">© 2025 SAOI | All Rights Reserved. Design & Development by H/DS</p>
     <div class="space-x-4 mt-2 md:mt-0">
       <a href="#" class="hover:text-yellow-400">Privacy Policy</a>
       <a href="#" class="hover:text-yellow-400">Terms & Conditions</a>
@@ -596,6 +735,7 @@
   </div>
 </footer>
 <!-- Footer End -->
+
 
 <!-- FontAwesome for Icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
